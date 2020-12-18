@@ -1,0 +1,88 @@
+using System;
+
+namespace ConsoleApp8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //bir üçgende 2 kenarın toplamı 3. kenardan küçük olamaz
+            //ve bir üçgende 2kenarın farkının mutlak değeri 3. kenardan büyük olmamalıdır
+            //bu bilgileri kullanarak girilen 3sayıdan bir üçgen çizilebilir mi gösteren program?
+
+            bool exit = false;
+
+            while (exit == false)
+            {
+                
+
+                Console.WriteLine("Merhabalar efenim bir adet üçgen çizmek için 3 sayı giriniz /n ve bende bunları kullanarak üçgen çizilebilir mi size söyleyeyim :)");
+                Console.Write("İlk kenar = ");
+                int number1 = Int32.Parse(Console.ReadLine());
+                Console.Write("İkinci kenar = ");
+                int number2 = Int32.Parse(Console.ReadLine());
+                Console.Write("Üçüncü sayı = ");
+                int number3 = Int32.Parse(Console.ReadLine());
+
+
+                Console.WriteLine("Bu sayılarla bir üçgen oluşturulabilir mi bi düşüniyim? :)))");
+                Console.WriteLine("Sizce Oluşturulur mu? Eğer oluşurturulursa evet oluşturulmazsa hayır diyip entera basınız sonra cevabı söyliycem :))");
+                string yep = Console.ReadLine();
+                if (yep == "evet")
+                {
+                    if (number1 + number2 > number3 && (number1 - number2 < number3 && number2 - number1 < number3))
+                    {
+                        Console.WriteLine("Evet haklısın! Üçgün oluşur :))");
+                        
+                    }
+                    else if (number1 + number3 > number2 && (number1 - number3 < number2 && number3 - number1 < number2))
+                    {
+                        Console.WriteLine("Evet haklısın! Üçgen oluşur :))");
+                        
+                    }
+                    else if (number2 + number3 > number1 && (number2 - number3 < number1 && number3 - number2 < number1))
+                    {
+                        Console.WriteLine("Evet haklısın! Üçgen oluşur :))");
+                       
+                    }
+                    else
+                    {
+                        Console.WriteLine("Hayır oluşmaz! Çalışıp tekrar dene lütfen :))");
+                      
+                    }
+                }
+                else if (yep == "hayır")
+                {
+                    if (number1 + number2 > number3 && (number1 - number2 < number3 && number2 - number1 < number3))
+                    {
+                        Console.WriteLine("Çalışıp tekrar dene lütfen :) Üçgün oluşur :))");
+                       
+                    }
+                    else if (number1 + number3 > number2 && (number1 - number3 < number3 && number3 - number1 < number3))
+                    {
+                        Console.WriteLine("Çalışıp tekrar dene lütfen :) Üçgen oluşur :))");
+                      
+                    }
+                    else if (number2 + number3 > number1 && (number2 - number3 < number1 && number3 - number2 < number1))
+                    {
+                        Console.WriteLine("Çalışıp tekrar dene lütfen :) Üçgen oluşur :))");
+                       
+                    }
+                    else
+                    {
+                        Console.WriteLine("Evet haklısın oluşmaz :))");
+                       
+                    }                    
+                  
+                    Console.WriteLine("Çıkmak için quit yazınız :)) Tekrar için entera basınız :)");
+                    string quit = Console.ReadLine();
+
+                    if(quit == "quit")
+                    {
+                        exit = true;
+                    }
+                }
+            }
+        }
+    }
+}
